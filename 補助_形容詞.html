@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JLPT N5 — 補助資料 形容詞活用</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #111111; --gray: #666666; --lgray: #999999;
+  --border: #cccccc; --red: #cc0000; --bg: #f5f5f5; --white: #ffffff;
+  --yellow: #fffde7; --try-bg: #f0f7ff; --try-border: #90b8d8;
+}
+body { font-family: Arial, sans-serif; font-size: 15px; color: var(--black); background: var(--bg); padding-bottom: 60px; line-height: 1.6; }
+nav { position: sticky; top: 0; background: var(--white); border-bottom: 2px solid var(--black); padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 6px; z-index: 100; }
+nav a { font-size: 12px; color: var(--gray); text-decoration: none; padding: 3px 10px; border: 1px solid var(--border); border-radius: 3px; white-space: nowrap; }
+nav a:hover { background: var(--black); color: var(--white); }
+.page { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+.title-bar { background: var(--white); border-bottom: 3px solid var(--black); padding: 20px 20px 14px; }
+.title-bar h1 { font-size: 26px; font-weight: 900; }
+.title-bar h1 span { font-size: 18px; font-weight: 400; color: var(--gray); margin-left: 8px; }
+.title-bar .sub { font-size: 14px; color: var(--black); font-weight: 700; margin-top: 4px; }
+.title-bar .toc { font-size: 13px; color: var(--gray); margin-top: 4px; }
+.section { background: var(--white); border: 1px solid var(--border); border-radius: 4px; margin: 20px 0; overflow: hidden; }
+.section-header { border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); padding: 10px 20px; font-size: 17px; font-weight: 700; }
+.section-header .ja { font-size: 13px; color: var(--gray); font-weight: 400; margin-left: 8px; }
+.section-body { padding: 20px; }
+h2 { font-size: 16px; font-weight: 700; margin: 18px 0 8px; }
+h2 .ja { font-size: 12px; color: var(--gray); font-weight: 400; margin-left: 6px; }
+h3 { font-size: 14px; font-weight: 700; color: var(--gray); margin: 14px 0 6px; }
+.logic-box { border: 1px solid var(--border); border-radius: 4px; padding: 14px 16px; margin: 12px 0; background: #fafafa; }
+.logic-box p { font-size: 14px; margin: 4px 0; }
+.logic-box .ja { color: var(--gray); font-size: 12px; margin: 2px 0 8px; }
+.structure { border: 1px solid var(--gray); font-family: monospace; font-size: 14px; padding: 10px 14px; margin: 10px 0; background: #fafafa; border-radius: 3px; }
+.structure div { margin: 2px 0; }
+.legend { font-size: 11px; color: var(--lgray); margin: -6px 0 10px 2px; font-style: italic; }
+.transform { display: flex; align-items: center; gap: 6px; margin: 8px 0 4px; flex-wrap: wrap; line-height: 2.2; }
+.t-base { font-family: monospace; font-size: 17px; white-space: nowrap; }
+.t-del  { font-family: monospace; font-size: 17px; color: var(--red); text-decoration: line-through; white-space: nowrap; }
+.t-add  { font-family: monospace; font-size: 17px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; white-space: nowrap; }
+.t-plus  { font-size: 15px; color: var(--gray); }
+.t-arrow { font-size: 15px; color: var(--gray); }
+.t-roma  { font-size: 11px; color: var(--gray); display: block; margin: 0 0 8px; font-style: italic; }
+.check-pair { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.check-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+.check-row + .check-row { margin-top: 10px; padding-top: 10px; border-top: 1px solid #eee; }
+.check-mark { font-size: 18px; font-weight: 700; flex-shrink: 0; }
+.check-mark.ok { color: var(--black); }
+.check-mark.ng { color: var(--red); }
+.check-text { font-family: monospace; font-size: 15px; }
+.check-text.ng { color: var(--red); }
+.check-reason { color: var(--gray); font-size: 13px; margin-top: 3px; margin-left: 28px; font-style: italic; display: block; width: 100%; }
+.example-box { border: 3px solid var(--black); border-radius: 4px; padding: 12px 16px; margin: 10px 0; }
+.example-label { font-weight: 700; font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.example-line { font-family: monospace; font-size: 14px; margin: 3px 0; }
+.example-line.sub { color: var(--gray); font-size:12px; }
+.example-line.blank { height: 6px; }
+.note { border-left: 4px solid var(--black); padding: 10px 14px; margin: 14px 0; font-size: 13px; }
+.note-label { font-weight: 700; margin-bottom: 6px; }
+.note ul { padding-left: 16px; }
+.note li { margin: 4px 0; }
+.note .ja { color: var(--gray); font-size: 12px; }
+.exception-box { border: 2px solid var(--black); border-radius: 4px; padding: 14px 16px; margin: 12px 0; font-size: 14px; }
+.exception-title { font-weight: 700; margin-bottom: 10px; }
+.step-box { margin: 12px 0; }
+.step-row { display: flex; align-items: flex-start; gap: 10px; margin: 8px 0; font-size: 14px; }
+.step-num { background: var(--black); color: var(--white); font-size: 12px; font-weight: 700; min-width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.step-content { flex: 1; }
+.step-content .ja { color: var(--gray); font-size: 12px; margin-top: 2px; }
+.badge { display: inline-block; font-size: 10px; border: 1px solid var(--border); border-radius: 2px; padding: 1px 5px; color: var(--gray); margin-left: 4px; }
+.badge.today { border-color: var(--black); color: var(--black); background: var(--yellow); }
+.master-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 14px 0; }
+.master-table th, .master-table td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+.master-table th { font-weight: 700; background: #fafafa; }
+.master-table .pat-col { font-weight: 700; width: 160px; }
+.master-table .lesson-col { width: 80px; color: var(--lgray); font-size: 12px; }
+.master-table .today-row { background: var(--yellow); }
+.master-table .later-row td { color: var(--lgray); font-size: 12px; }
+ruby rt { font-size: 10px; color: var(--lgray); }
+@media print {
+  nav { display: none !important; }
+  body { background: #fff; font-size: 13px; }
+  .page { max-width: 100%; padding: 0; }
+  .section { border: 1px solid #999; margin: 10px 0; page-break-inside: avoid; }
+  .check-text.ng { color: #000; text-decoration: line-through; }
+  .check-mark.ng { color: #000; }
+  .t-del { color: #000; }
+  .master-table .today-row { background: #f0f0f0; }
+  a { color: #000; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="title-bar">
+  <div class="page">
+    <h1>JLPT N5 <span><ruby>補助資料<rt>ほじょしりょう</rt></ruby> Reference Sheet</span></h1>
+    <div class="sub"><ruby>形容詞<rt>けいようし</rt></ruby><ruby>活用<rt>かつよう</rt></ruby> Adjective Conjugation</div>
+    <div class="toc">イ<ruby>形容詞<rt>けいようし</rt></ruby> i-adjective &nbsp;|&nbsp; ナ<ruby>形容詞<rt>けいようし</rt></ruby> na-adjective &nbsp;|&nbsp; <ruby>全<rt>ぜん</rt></ruby>パターン<ruby>一覧<rt>いちらん</rt></ruby> All Patterns</div>
+  </div>
+</div>
+
+<nav>
+  <a href="#identify">グループの<ruby>見分<rt>みわ</rt></ruby>け<ruby>方<rt>かた</rt></ruby> How to identify <span style="font-size:10px;color:var(--lgray);">L6</span></a>
+  <a href="#affirmative"><ruby>肯定形<rt>こうていけい</rt></ruby> Affirmative <span style="font-size:10px;color:var(--lgray);">L6</span></a>
+  <a href="#negative"><ruby>否定形<rt>ひていけい</rt></ruby> Negative <span style="font-size:10px;color:var(--lgray);">L6</span></a>
+  <a href="#noun"><ruby>名詞<rt>めいし</rt></ruby><ruby>修飾<rt>しゅうしょく</rt></ruby> Adj+Noun <span style="font-size:10px;color:var(--lgray);">L6</span></a>
+  <a href="#past-pos"><ruby>過去<rt>かこ</rt></ruby><ruby>肯定<rt>こうてい</rt></ruby> Past (+) <span style="font-size:10px;color:var(--lgray);">L11</span></a>
+  <a href="#past-neg"><ruby>過去<rt>かこ</rt></ruby><ruby>否定<rt>ひてい</rt></ruby> Past (−) <span style="font-size:10px;color:var(--lgray);">L11</span></a>
+  <a href="#te">て<ruby>形<rt>けい</rt></ruby> Te-form <span style="font-size:10px;color:var(--lgray);">L12</span></a>
+  <a href="#exceptions"><ruby>例外<rt>れいがい</rt></ruby> Exceptions</a>
+  <a href="#summary">まとめ Summary</a>
+  <a href="#vocab">N5 <ruby>形容詞<rt>けいようし</rt></ruby>リスト Vocab</a>
+</nav>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════
+     グループの見分け方
+══════════════════════════════════════ -->
+<div class="section" id="identify">
+  <div class="section-header"><ruby>グループの<rt></rt></ruby><ruby>見分<rt>みわ</rt></ruby>け<ruby>方<rt>かた</rt></ruby> <span class="ja">How to identify the two groups &nbsp;<span class="badge today">L6</span></span></div>
+  <div class="section-body">
+    <div class="logic-box">
+      <p><strong>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</strong> — ends in「い」.</p>
+      <p class="ja">→ 「い」で<ruby>終わる<rt>お</rt></ruby>。(The last letter is い.)</p>
+      <p style="margin-top:8px;font-size:14px;"><ruby>大<rt>おお</rt></ruby>き<strong>い</strong>　・　<ruby>古<rt>ふる</rt></ruby><strong>い</strong>　・　<ruby>重<rt>おも</rt></ruby><strong>い</strong>　・　おもしろ<strong>い</strong>　・　<ruby>楽<rt>たの</rt></ruby>し<strong>い</strong></p>
+      <p style="color:var(--lgray);font-size:12px;">(big / old / heavy / interesting / fun)</p>
+    </div>
+    <div class="logic-box">
+      <p><strong>na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</strong> — does NOT end in「い」. Adds「な」before a noun.</p>
+      <p class="ja">→ 「い」で<ruby>終わら<rt>お</rt></ruby>ない。<ruby>名詞<rt>めいし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に「な」をつける。(Does not end in い. Add な before a noun.)</p>
+      <p style="margin-top:8px;font-size:14px;"><ruby>静<rt>しず</rt></ruby>か　・　ゆうめい　・　げんき　・　きれい　・　すき</p>
+      <p style="color:var(--lgray);font-size:12px;">(quiet / famous / energetic / pretty / liked)</p>
+    </div>
+    <div class="exception-box">
+      <div class="exception-title">⚠️ <ruby>例外<rt>れいがい</rt></ruby> Exceptions — ends in「い」but IS a na-adjective</div>
+      <p style="font-size:14px;"><strong>きれい</strong>（pretty）・<strong>ゆうめい</strong>（famous）・<strong>きらい</strong>（disliked）</p>
+      <p style="color:var(--gray);font-size:12px;margin-top:6px;">→ 「い」で<ruby>終わる<rt>お</rt></ruby>がナ<ruby>形容詞<rt>けいようし</rt></ruby>。<ruby>名詞<rt>めいし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は「な」が<ruby>必要<rt>ひつよう</rt></ruby>。
+        <span style="color:var(--lgray);"> (They look like i-adjectives but they are na-adjectives. Add な before a noun.)</span></p>
+      <div class="transform" style="margin-top:10px;">
+        <span class="t-base">きれい</span><span class="t-add">な</span><span class="t-base"><ruby>花<rt>はな</rt></ruby></span>
+        <span style="font-size:13px;color:var(--gray);margin-left:10px;">○ correct</span>
+      </div>
+      <div class="transform">
+        <span class="t-base" style="color:var(--red);">きれい <ruby>花<rt>はな</rt></ruby></span>
+        <span style="font-size:13px;color:var(--red);margin-left:10px;">✖ wrong — missing「な」</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     肯定形
+══════════════════════════════════════ -->
+<div class="section" id="affirmative">
+  <div class="section-header"><ruby>肯定形<rt>こうていけい</rt></ruby> <span class="ja">Affirmative — "is ~" &nbsp;<span class="badge today">Lesson 6</span></span></div>
+  <div class="section-body">
+
+    <h3>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Keep「い」. Nothing changes.<div class="ja">→ 「い」のまま。<ruby>変え<rt>か</rt></ruby>ない。(Keep い as-is.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add です.<div class="ja">→ 「です」をつける。(Add です.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>大き<rt>おおき</rt></ruby></span><span class="t-add">い</span><span class="t-plus">＋</span><span class="t-base">です</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">ōki<strong>i</strong>-desu — It is big.</span>
+
+    <h3 style="margin-top:16px;">na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「な」.<div class="ja">→ 「な」を<ruby>取る<rt>と</rt></ruby>。(Remove な.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add です.<div class="ja">→ 「です」をつける。(Add です.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>静か<rt>しずか</rt></ruby></span><span class="t-del">な</span><span class="t-arrow">→</span><span class="t-base">です</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">shizuka-desu — It is quiet.</span>
+
+    <div class="structure">
+      <div>i-adj:   N + は + [A-<strong>い</strong>] + です</div>
+      <div>na-adj:  N + は + [Na-<span style="text-decoration:line-through;color:var(--red);">な</span>→] + です</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）　Na = na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">この つくえは <ruby>大きい<rt>おおきい</rt></ruby>です。</span>
+        <span class="check-reason">i-adj: keep「い」+ です.<br>→ 「い」のまま＋です。(This desk is big.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">この つくえは <ruby>大き<rt>おおき</rt></ruby>です。</span>
+        <span class="check-reason">Never drop「い」. → 「い」は<ruby>取っ<rt>と</rt></ruby>てはいけません。(Do not remove い.)</span>
+      </div>
+    </div>
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text"><ruby>私<rt>わたし</rt></ruby>の <ruby>町<rt>まち</rt></ruby>は <ruby>静<rt>しず</rt></ruby>かです。</span>
+        <span class="check-reason">na-adj: drop「な」+ です.<br>→ 「な」を<ruby>取り<rt>と</rt></ruby>＋です。(My town is quiet.)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng"><ruby>私<rt>わたし</rt></ruby>の <ruby>町<rt>まち</rt></ruby>は <ruby>静<rt>しず</rt></ruby>かなです。</span>
+        <span class="check-reason">Drop「な」before です. → 「な」は<ruby>取ります<rt>と</rt></ruby>。(Remove な before です.)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     否定形
+══════════════════════════════════════ -->
+<div class="section" id="negative">
+  <div class="section-header"><ruby>否定形<rt>ひていけい</rt></ruby> <span class="ja">Negative — "is not ~" &nbsp;<span class="badge today">Lesson 6</span></span></div>
+  <div class="section-body">
+
+    <h3>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「い」.<div class="ja">→ 「い」を<ruby>取る<rt>と</rt></ruby>。(Remove い.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「くないです」.<div class="ja">→ 「くないです」をつける。(Add くないです.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>大き<rt>おおき</rt></ruby></span><span class="t-del">い</span><span class="t-arrow">→</span><span class="t-add">くない</span><span class="t-base">です</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">ōki<strong>kunai</strong>-desu — not big</span>
+
+    <h3 style="margin-top:16px;">na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「な」.<div class="ja">→ 「な」を<ruby>取る<rt>と</rt></ruby>。(Remove な.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「じゃありません」(casual) or「ではありません」(formal).<div class="ja">→ 「じゃありません」または「ではありません」をつける。</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>静か<rt>しずか</rt></ruby></span><span class="t-del">な</span><span class="t-arrow">→</span><span class="t-add">じゃありません</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">shizuka-<strong>ja arimasen</strong> — not quiet</span>
+
+    <div class="structure">
+      <div>i-adj:   N + は + [A-<span style="text-decoration:line-through;color:var(--red);">い</span>→<strong>く</strong>] + ないです</div>
+      <div>na-adj:  N + は + [Na-<span style="text-decoration:line-through;color:var(--red);">な</span>→] + じゃありません</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective　Na = na-adjective</div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">この かばんは おもくないです。</span>
+        <span class="check-reason">おもい → おも + くないです.<br>→ 「い」を<ruby>取り<rt>と</rt></ruby>「くないです」をつける。(not heavy)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">この かばんは おもいくないです。</span>
+        <span class="check-reason">Remove「い」first. おもい → おもく (not おもいく).<br>→ 「い」を<ruby>先<rt>さき</rt></ruby>に<ruby>取る<rt>と</rt></ruby>。(Remove い before adding くない.)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     名詞修飾
+══════════════════════════════════════ -->
+<div class="section" id="noun">
+  <div class="section-header"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby> <span class="ja">Adjective + Noun &nbsp;<span class="badge today">Lesson 6</span></span></div>
+  <div class="section-body">
+
+    <h3>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Keep「い」. Nothing changes.<div class="ja">→ 「い」のまま。<ruby>変え<rt>か</rt></ruby>ない。</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Place directly before the noun.<div class="ja">→ <ruby>名詞<rt>めいし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>に<ruby>置く<rt>お</rt></ruby>。(Put it before the noun.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>古<rt>ふる</rt></ruby></span><span class="t-add">い</span><span class="t-plus">＋</span><span class="t-base"><ruby>本<rt>ほん</rt></ruby></span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">furu<strong>i</strong> hon — an old book</span>
+
+    <h3 style="margin-top:16px;">na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Add「な」after the adjective.<div class="ja">→ <ruby>形容詞<rt>けいようし</rt></ruby>の<ruby>後<rt>あと</rt></ruby>ろに「な」をつける。(Add な after the adjective.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Place the noun after「な」.<div class="ja">→ 「な」の<ruby>後<rt>あと</rt></ruby>ろに<ruby>名詞<rt>めいし</rt></ruby>を<ruby>置く<rt>お</rt></ruby>。(Put the noun after な.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>静か<rt>しずか</rt></ruby></span><span class="t-add">な</span><span class="t-plus">＋</span><span class="t-base"><ruby>町<rt>まち</rt></ruby></span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">shizuka<strong>-na</strong> machi — a quiet town</span>
+
+    <div class="structure">
+      <div>i-adj:   [A-<strong>い</strong>] + N</div>
+      <div>na-adj:  [Na-<strong>な</strong>] + N</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective　Na = na-adjective</div>
+
+    <div class="check-pair">
+      <div class="check-row">
+        <span class="check-mark ok">○</span>
+        <span class="check-text">ふじさんは ゆうめいな <ruby>山<rt>やま</rt></ruby>です。</span>
+        <span class="check-reason">na-adj: add「な」before noun.<br>→ 「な」をつける。(a famous mountain)</span>
+      </div>
+      <div class="check-row">
+        <span class="check-mark ng">×</span>
+        <span class="check-text ng">ふじさんは ゆうめい <ruby>山<rt>やま</rt></ruby>です。</span>
+        <span class="check-reason">na-adj needs「な」before noun. → 「な」が<ruby>必要<rt>ひつよう</rt></ruby>。(な is required.)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     過去肯定
+══════════════════════════════════════ -->
+<div class="section" id="past-pos">
+  <div class="section-header"><ruby>過去<rt>かこ</rt></ruby><ruby>肯定形<rt>こうていけい</rt></ruby> <span class="ja">Past Affirmative — "was ~" &nbsp;<span class="badge">Lesson 11</span></span></div>
+  <div class="section-body">
+
+    <h3>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「い」.<div class="ja">→ 「い」を<ruby>取る<rt>と</rt></ruby>。(Remove い.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「かったです」.<div class="ja">→ 「かったです」をつける。(Add かったです.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>大き<rt>おおき</rt></ruby></span><span class="t-del">い</span><span class="t-arrow">→</span><span class="t-add">かった</span><span class="t-base">です</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">ōki<strong>katta</strong>-desu — It was big.</span>
+
+    <h3 style="margin-top:16px;">na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「な」.<div class="ja">→ 「な」を<ruby>取る<rt>と</rt></ruby>。(Remove な.)</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「でした」.<div class="ja">→ 「でした」をつける。(Add でした.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>静か<rt>しずか</rt></ruby></span><span class="t-del">な</span><span class="t-arrow">→</span><span class="t-add">でした</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">shizuka-<strong>deshita</strong> — It was quiet.</span>
+
+    <div class="structure">
+      <div>i-adj:   N + は + [A-<span style="text-decoration:line-through;color:var(--red);">い</span>→<strong>かった</strong>] + です</div>
+      <div>na-adj:  N + は + [Na-<span style="text-decoration:line-through;color:var(--red);">な</span>→] + でした</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective　Na = na-adjective</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     過去否定
+══════════════════════════════════════ -->
+<div class="section" id="past-neg">
+  <div class="section-header"><ruby>過去<rt>かこ</rt></ruby><ruby>否定形<rt>ひていけい</rt></ruby> <span class="ja">Past Negative — "was not ~" &nbsp;<span class="badge">Lesson 11</span></span></div>
+  <div class="section-body">
+
+    <h3>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「い」.<div class="ja">→ 「い」を<ruby>取る<rt>と</rt></ruby>。</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「くなかったです」.<div class="ja">→ 「くなかったです」をつける。(Add くなかったです.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>大き<rt>おおき</rt></ruby></span><span class="t-del">い</span><span class="t-arrow">→</span><span class="t-add">くなかった</span><span class="t-base">です</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">ōki<strong>kunakatta</strong>-desu — It was not big.</span>
+
+    <h3 style="margin-top:16px;">na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「な」.<div class="ja">→ 「な」を<ruby>取る<rt>と</rt></ruby>。</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「じゃありませんでした」.<div class="ja">→ 「じゃありませんでした」をつける。(Add じゃありませんでした.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>静か<rt>しずか</rt></ruby></span><span class="t-del">な</span><span class="t-arrow">→</span><span class="t-add">じゃありませんでした</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">shizuka-<strong>ja arimasendeshita</strong> — It was not quiet.</span>
+
+    <div class="structure">
+      <div>i-adj:   N + は + [A-<span style="text-decoration:line-through;color:var(--red);">い</span>→<strong>く</strong>] + なかったです</div>
+      <div>na-adj:  N + は + [Na-<span style="text-decoration:line-through;color:var(--red);">な</span>→] + じゃありませんでした</div>
+    </div>
+    <div class="legend">N = noun（<ruby>名詞<rt>めいし</rt></ruby>）　A = i-adjective　Na = na-adjective</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     て形
+══════════════════════════════════════ -->
+<div class="section" id="te">
+  <div class="section-header">て<ruby>形<rt>けい</rt></ruby> <span class="ja">Te-form — connecting adjectives &nbsp;<span class="badge">Lesson 12</span></span></div>
+  <div class="section-body">
+
+    <h3>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「い」.<div class="ja">→ 「い」を<ruby>取る<rt>と</rt></ruby>。</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「くて」.<div class="ja">→ 「くて」をつける。(Add くて.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>大き<rt>おおき</rt></ruby></span><span class="t-del">い</span><span class="t-arrow">→</span><span class="t-add">くて</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">ōki<strong>kute</strong> — big and ~</span>
+
+    <h3 style="margin-top:16px;">na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）</h3>
+    <div class="step-box">
+      <div class="step-row"><div class="step-num">1</div><div class="step-content">Remove「な」.<div class="ja">→ 「な」を<ruby>取る<rt>と</rt></ruby>。</div></div></div>
+      <div class="step-row"><div class="step-num">2</div><div class="step-content">Add「で」.<div class="ja">→ 「で」をつける。(Add で.)</div></div></div>
+    </div>
+    <div class="transform" style="margin-left:18px;">
+      <span class="t-base"><ruby>静か<rt>しずか</rt></ruby></span><span class="t-del">な</span><span class="t-arrow">→</span><span class="t-add">で</span>
+    </div>
+    <span class="t-roma" style="margin-left:18px;">shizuka-<strong>de</strong> — quiet and ~</span>
+
+    <div class="structure">
+      <div>i-adj:   [A-<span style="text-decoration:line-through;color:var(--red);">い</span>→<strong>く</strong>] + て</div>
+      <div>na-adj:  [Na-<span style="text-decoration:line-through;color:var(--red);">な</span>→] + で</div>
+    </div>
+    <div class="legend">A = i-adjective　Na = na-adjective</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     例外
+══════════════════════════════════════ -->
+<div class="section" id="exceptions">
+  <div class="section-header"><ruby>例外<rt>れいがい</rt></ruby> <span class="ja">Exceptions — special cases</span></div>
+  <div class="section-body">
+
+    <div class="exception-box">
+      <div class="exception-title">⚠️ 「いい」(good) — negative and past use よ- stem</div>
+      <p style="font-size:14px;margin-bottom:8px;">「いい」is used only in affirmative. All other forms use <strong>「よい」</strong> as the base.</p>
+      <p style="color:var(--gray);font-size:12px;margin-bottom:12px;">→ 「いい」は<ruby>肯定形<rt>こうていけい</rt></ruby>のみ。<ruby>否定形<rt>ひていけい</rt></ruby>・<ruby>過去形<rt>かこけい</rt></ruby>はすべて「よい」を<ruby>使う<rt>つか</rt></ruby>。(All non-affirmative forms start with よ-.)</p>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="background:#fafafa;">
+          <th style="border:1px solid var(--border);padding:6px 10px;">Form <ruby>形<rt>けい</rt></ruby></th>
+          <th style="border:1px solid var(--border);padding:6px 10px;">いい (good)</th>
+          <th style="border:1px solid var(--border);padding:6px 10px;">English</th>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:6px 10px;"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="border:1px solid var(--border);padding:6px 10px;font-family:monospace;">いいです</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;color:var(--gray);">It is good.</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:6px 10px;"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="border:1px solid var(--border);padding:6px 10px;font-family:monospace;"><strong>よ</strong>くないです</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;color:var(--gray);">not good <span style="color:var(--red);">✖ いくないです</span></td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:6px 10px;"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;font-family:monospace;"><strong>よ</strong>かったです</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;color:var(--gray);">It was good.</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:6px 10px;"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;font-family:monospace;"><strong>よ</strong>くなかったです</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;color:var(--gray);">not good (past)</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:6px 10px;">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="border:1px solid var(--border);padding:6px 10px;font-family:monospace;"><strong>よ</strong>くて</td>
+          <td style="border:1px solid var(--border);padding:6px 10px;color:var(--gray);">good and ~</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     まとめ
+══════════════════════════════════════ -->
+<div class="section" id="summary">
+  <div class="section-body">
+    <h2>まとめ <span class="ja">All Patterns at a Glance</span></h2>
+    <table class="master-table">
+      <thead>
+        <tr>
+          <th class="pat-col">Pattern パターン</th>
+          <th class="lesson-col"><ruby>習う<rt>なら</rt></ruby>レッスン</th>
+          <th>i-adjective（イ<ruby>形容詞<rt>けいようし</rt></ruby>）<span style="font-size:11px;font-weight:400;color:var(--gray);">例：<ruby>大きい<rt>おおきい</rt></ruby></span></th>
+          <th>na-adjective（ナ<ruby>形容詞<rt>けいようし</rt></ruby>）<span style="font-size:11px;font-weight:400;color:var(--gray);">例：<ruby>静か<rt>しずか</rt></ruby></span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="today-row">
+          <td><ruby>肯定<rt>こうてい</rt></ruby><br><span style="color:var(--lgray);font-size:11px;">affirmative</span></td>
+          <td>Lesson 6</td>
+          <td><ruby>大きい<rt>おおきい</rt></ruby>です<br><span style="color:var(--lgray);font-size:11px;">(It is big.)</span></td>
+          <td><ruby>静か<rt>しずか</rt></ruby>です<br><span style="color:var(--lgray);font-size:11px;">(It is quiet.)</span></td>
+        </tr>
+        <tr class="today-row">
+          <td><ruby>否定<rt>ひてい</rt></ruby><br><span style="color:var(--lgray);font-size:11px;">negative</span></td>
+          <td>Lesson 6</td>
+          <td><ruby>大<rt>おお</rt></ruby>き<span style="color:var(--red);font-weight:700;">くない</span>です<br><span style="color:var(--lgray);font-size:11px;">(not big)</span></td>
+          <td><ruby>静<rt>しず</rt></ruby>か<span style="color:var(--red);font-weight:700;">じゃありません</span><br><span style="color:var(--lgray);font-size:11px;">(not quiet)</span></td>
+        </tr>
+        <tr class="today-row">
+          <td><ruby>名詞<rt>めいし</rt></ruby><ruby>修飾<rt>しゅうしょく</rt></ruby><br><span style="color:var(--lgray);font-size:11px;">adj + noun</span></td>
+          <td>Lesson 6</td>
+          <td><ruby>古<rt>ふる</rt></ruby><span style="font-weight:700;">い</span><ruby>本<rt>ほん</rt></ruby><br><span style="color:var(--lgray);font-size:11px;">(an old book)</span></td>
+          <td><ruby>静<rt>しず</rt></ruby>か<span style="color:var(--red);font-weight:700;">な</span><ruby>町<rt>まち</rt></ruby><br><span style="color:var(--lgray);font-size:11px;">(a quiet town)</span></td>
+        </tr>
+        <tr class="later-row">
+          <td><ruby>過去<rt>かこ</rt></ruby>（＋）<br><span style="color:var(--lgray);font-size:11px;">past affirmative</span></td>
+          <td>Lesson 11</td>
+          <td><ruby>大<rt>おお</rt></ruby>き<span style="color:var(--red);font-weight:700;">かった</span>です<br><span style="color:var(--lgray);font-size:11px;">(It was big.)</span></td>
+          <td><ruby>静<rt>しず</rt></ruby>か<span style="color:var(--red);font-weight:700;">でした</span><br><span style="color:var(--lgray);font-size:11px;">(It was quiet.)</span></td>
+        </tr>
+        <tr class="later-row">
+          <td><ruby>過去<rt>かこ</rt></ruby>（−）<br><span style="color:var(--lgray);font-size:11px;">past negative</span></td>
+          <td>Lesson 11</td>
+          <td><ruby>大<rt>おお</rt></ruby>き<span style="color:var(--red);font-weight:700;">くなかった</span>です<br><span style="color:var(--lgray);font-size:11px;">(not big, past)</span></td>
+          <td><ruby>静<rt>しず</rt></ruby>か<span style="color:var(--red);font-weight:700;">じゃありませんでした</span><br><span style="color:var(--lgray);font-size:11px;">(not quiet, past)</span></td>
+        </tr>
+        <tr class="later-row">
+          <td>て<ruby>形<rt>けい</rt></ruby><br><span style="color:var(--lgray);font-size:11px;">te-form</span></td>
+          <td>Lesson 12</td>
+          <td><ruby>大<rt>おお</rt></ruby>き<span style="color:var(--red);font-weight:700;">くて</span><br><span style="color:var(--lgray);font-size:11px;">(big and ~)</span></td>
+          <td><ruby>静<rt>しず</rt></ruby>か<span style="color:var(--red);font-weight:700;">で</span><br><span style="color:var(--lgray);font-size:11px;">(quiet and ~)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="note-label">📝 <ruby>例外<rt>れいがい</rt></ruby> Key exceptions</div>
+      <ul>
+        <li>「いい」→ negative/past use <strong>よ-</strong> stem: よくないです・よかったです
+          <div class="ja">→ 「いい」の<ruby>否定形<rt>ひていけい</rt></ruby>・<ruby>過去形<rt>かこけい</rt></ruby>は「よ」から<ruby>始まる<rt>はじ</rt></ruby>。(Start with よ, not い.)</div>
+        </li>
+        <li>「きれい・ゆうめい・きらい」end in「い」but are <strong>na-adjectives</strong> → add「な」before a noun.
+          <div class="ja">→ 「い」で<ruby>終わる<rt>お</rt></ruby>がナ<ruby>形容詞<rt>けいようし</rt></ruby>。<ruby>名詞<rt>めいし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は「な」が<ruby>必要<rt>ひつよう</rt></ruby>。(Add な before a noun.)</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     N5 形容詞リスト
+══════════════════════════════════════ -->
+<div class="section" id="vocab">
+  <div class="section-header">N5 <ruby>形容詞<rt>けいようし</rt></ruby>リスト <span class="ja">N5 Adjective Vocabulary — All Forms</span></div>
+  <div class="section-body">
+
+    <p style="font-size:13px;margin-bottom:14px;color:var(--gray);">
+      Each adjective shows all conjugation forms learned in this course.
+      <ruby>変化<rt>へんか</rt></ruby>した<ruby>部分<rt>ぶぶん</rt></ruby>は<span style="color:var(--red);font-weight:700;">赤</span>で<ruby>表示<rt>ひょうじ</rt></ruby>しています。
+      <span style="color:var(--lgray);font-size:11px;">(Changed parts are shown in red.)</span>
+    </p>
+
+    <h2>イ<ruby>形容詞<rt>けいようし</rt></ruby> i-adjectives</h2>
+
+    <table class="master-table" style="font-size:12px;">
+      <thead>
+        <tr>
+          <th style="width:90px;"><ruby>形容詞<rt>けいようし</rt></ruby></th>
+          <th style="width:110px;">English</th>
+          <th style="width:90px;"><ruby>活用形<rt>かつようけい</rt></ruby> Form</th>
+          <th>i-adjective <ruby>例<rt>れい</rt></ruby></th>
+        </tr>
+      </thead>
+      <tbody><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">大きい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">おおきい</span><br><span style="color:var(--gray);font-size:10px;">big</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">おおきい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(ōkii-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">おおき<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(ōkikunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">おおきい＋N <span style="color:var(--lgray);font-size:10px;">(ōkii + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">おおき<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(ōkikatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">おおき<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(ōkikunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">おおき<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(ōkikute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">小さい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">ちいさい</span><br><span style="color:var(--gray);font-size:10px;">small</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">ちいさい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(chiisai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">ちいさ<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(chiisakunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">ちいさい＋N <span style="color:var(--lgray);font-size:10px;">(chiisai + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">ちいさ<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(chiisakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">ちいさ<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(chiisakunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">ちいさ<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(chiisakute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">古い<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">ふるい</span><br><span style="color:var(--gray);font-size:10px;">old (thing)</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">ふるい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(furui-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">ふる<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(furukunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">ふるい＋N <span style="color:var(--lgray);font-size:10px;">(furui + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">ふる<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(furukatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">ふる<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(furukunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">ふる<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(furukute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">新しい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">あたらしい</span><br><span style="color:var(--gray);font-size:10px;">new</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">あたらしい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(atarashii-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">あたらし<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(atarashikunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">あたらしい＋N <span style="color:var(--lgray);font-size:10px;">(atarashii + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">あたらし<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(atarashikatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">あたらし<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(atarashikunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">あたらし<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(atarashikute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">高い<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">たかい</span><br><span style="color:var(--gray);font-size:10px;">expensive / tall</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">たかい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(takai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">たか<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(takakunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">たかい＋N <span style="color:var(--lgray);font-size:10px;">(takai + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">たか<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(takakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">たか<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(takakunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">たか<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(takakute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">安い<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">やすい</span><br><span style="color:var(--gray);font-size:10px;">cheap</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">やすい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(yasui-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">やす<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(yasukunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">やすい＋N <span style="color:var(--lgray);font-size:10px;">(yasui + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">やす<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(yasukatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">やす<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(yasukunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">やす<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(yasukute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">重い<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">おもい</span><br><span style="color:var(--gray);font-size:10px;">heavy</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">おもい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(omoi-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">おも<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(omokunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">おもい＋N <span style="color:var(--lgray);font-size:10px;">(omoi + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">おも<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(omokatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">おも<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(omokunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">おも<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(omokute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">軽い<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">かるい</span><br><span style="color:var(--gray);font-size:10px;">light</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">かるい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(karui-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">かる<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(karukunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">かるい＋N <span style="color:var(--lgray);font-size:10px;">(karui + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">かる<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(karukatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">かる<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(karukunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">かる<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(karukute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">難しい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">むずかしい</span><br><span style="color:var(--gray);font-size:10px;">difficult</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">むずかしい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(muzukashii-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">むずかし<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(muzukashikunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">むずかしい＋N <span style="color:var(--lgray);font-size:10px;">(muzukashii + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">むずかし<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(muzukashikatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">むずかし<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(muzukashikunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">むずかし<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(muzukashikute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">楽しい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">たのしい</span><br><span style="color:var(--gray);font-size:10px;">fun</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">たのしい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(tanoshii-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">たのし<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(tanoshikunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">たのしい＋N <span style="color:var(--lgray);font-size:10px;">(tanoshii + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">たのし<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(tanoshikatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">たのし<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(tanoshikunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">たのし<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(tanoshikute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">忙しい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">いそがしい</span><br><span style="color:var(--gray);font-size:10px;">busy</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">いそがしい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(isogashii-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">いそがし<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(isogashikunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">いそがしい＋N <span style="color:var(--lgray);font-size:10px;">(isogashii + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">いそがし<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(isogashikatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">いそがし<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(isogashikunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">いそがし<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(isogashikute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">おもしろい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">おもしろい</span><br><span style="color:var(--gray);font-size:10px;">interesting</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">おもしろい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(omoshiroi-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">おもしろ<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(omoshirokunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">おもしろい＋N <span style="color:var(--lgray);font-size:10px;">(omoshiroi + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">おもしろ<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(omoshirokatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">おもしろ<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(omoshirokunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">おもしろ<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(omoshirokute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">熱い<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">あつい</span><br><span style="color:var(--gray);font-size:10px;">hot</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">あつい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(atsui-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">あつ<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(atsukunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">あつい＋N <span style="color:var(--lgray);font-size:10px;">(atsui + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">あつ<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(atsukatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">あつ<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(atsukunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">あつ<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(atsukute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">冷たい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">つめたい</span><br><span style="color:var(--gray);font-size:10px;">cold (thing)</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">つめたい<span style="color:var(--red);font-weight:700;"></span>です <span style="color:var(--lgray);font-size:10px;">(tsumetai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">つめた<span style="color:var(--red);font-weight:700;">くない</span>です <span style="color:var(--lgray);font-size:10px;">(tsumetakunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">つめたい＋N <span style="color:var(--lgray);font-size:10px;">(tsumetai + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">つめた<span style="color:var(--red);font-weight:700;">かった</span>です <span style="color:var(--lgray);font-size:10px;">(tsumetakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">つめた<span style="color:var(--red);font-weight:700;">くなかった</span>です <span style="color:var(--lgray);font-size:10px;">(tsumetakunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">つめた<span style="color:var(--red);font-weight:700;">くて</span> <span style="color:var(--lgray);font-size:10px;">(tsumetakute)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;">いい／よい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">いい／よい</span><br><span style="color:var(--gray);font-size:10px;">good</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;">いいです <span style="color:var(--lgray);font-size:10px;">(ii-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;"><span style="color:var(--red);font-weight:700;">よ</span>くないです <span style="color:var(--lgray);font-size:10px;">(yo-kunai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">いい＋N <span style="color:var(--lgray);font-size:10px;">(ii + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;"><span style="color:var(--red);font-weight:700;">よ</span>かったです <span style="color:var(--lgray);font-size:10px;">(yo-katta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;"><span style="color:var(--red);font-weight:700;">よ</span>くなかったです <span style="color:var(--lgray);font-size:10px;">(yo-kunakatta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;"><span style="color:var(--red);font-weight:700;">よ</span>くて <span style="color:var(--lgray);font-size:10px;">(yo-kute)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top:24px;">ナ<ruby>形容詞<rt>けいようし</rt></ruby> na-adjectives</h2>
+    <table class="master-table" style="font-size:12px;">
+      <thead>
+        <tr>
+          <th style="width:90px;"><ruby>形容詞<rt>けいようし</rt></ruby></th>
+          <th style="width:110px;">English</th>
+          <th style="width:90px;"><ruby>活用形<rt>かつようけい</rt></ruby> Form</th>
+          <th>na-adjective <ruby>例<rt>れい</rt></ruby></th>
+        </tr>
+      </thead>
+      <tbody><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">静か<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">しずか</span><br><span style="color:var(--gray);font-size:10px;">quiet</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">しずかです <span style="color:var(--lgray);font-size:10px;">(shizuka-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">しずか<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(shizuka-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">しずか<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(shizuka-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">しずか<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(shizuka-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">しずか<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(shizuka-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">しずか<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(shizuka-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">にぎやか<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">にぎやか</span><br><span style="color:var(--gray);font-size:10px;">lively</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">にぎやかです <span style="color:var(--lgray);font-size:10px;">(nigiyaka-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">にぎやか<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(nigiyaka-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">にぎやか<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(nigiyaka-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">にぎやか<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(nigiyaka-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">にぎやか<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(nigiyaka-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">にぎやか<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(nigiyaka-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">きれい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">きれい</span><br><span style="color:var(--gray);font-size:10px;">pretty / clean ※na</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">きれいです <span style="color:var(--lgray);font-size:10px;">(kirei-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">きれい<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(kirei-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">きれい<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(kirei-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">きれい<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(kirei-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">きれい<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(kirei-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">きれい<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(kirei-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">ゆうめい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">ゆうめい</span><br><span style="color:var(--gray);font-size:10px;">famous ※na</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">ゆうめいです <span style="color:var(--lgray);font-size:10px;">(yuumei-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">ゆうめい<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(yuumei-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">ゆうめい<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(yuumei-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">ゆうめい<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(yuumei-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">ゆうめい<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(yuumei-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">ゆうめい<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(yuumei-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">げんき<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">げんき</span><br><span style="color:var(--gray);font-size:10px;">energetic</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">げんきです <span style="color:var(--lgray);font-size:10px;">(genki-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">げんき<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(genki-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">げんき<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(genki-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">げんき<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(genki-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">げんき<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(genki-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">げんき<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(genki-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">すき<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">すき</span><br><span style="color:var(--gray);font-size:10px;">liked</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">すきです <span style="color:var(--lgray);font-size:10px;">(suki-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">すき<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(suki-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">すき<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(suki-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">すき<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(suki-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">すき<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(suki-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">すき<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(suki-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">きらい<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">きらい</span><br><span style="color:var(--gray);font-size:10px;">disliked ※na</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">きらいです <span style="color:var(--lgray);font-size:10px;">(kirai-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">きらい<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(kirai-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">きらい<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(kirai-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">きらい<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(kirai-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">きらい<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(kirai-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">きらい<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(kirai-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">じょうず<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">じょうず</span><br><span style="color:var(--gray);font-size:10px;">good at</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">じょうずです <span style="color:var(--lgray);font-size:10px;">(jouzu-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">じょうず<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(jouzu-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">じょうず<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(jouzu-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">じょうず<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(jouzu-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">じょうず<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(jouzu-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">じょうず<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(jouzu-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">へた<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">へた</span><br><span style="color:var(--gray);font-size:10px;">bad at</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">へたです <span style="color:var(--lgray);font-size:10px;">(heta-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">へた<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(heta-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">へた<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(heta-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">へた<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(heta-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">へた<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(heta-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">へた<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(heta-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">ひま<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">ひま</span><br><span style="color:var(--gray);font-size:10px;">free (time)</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">ひまです <span style="color:var(--lgray);font-size:10px;">(hima-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">ひま<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(hima-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">ひま<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(hima-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">ひま<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(hima-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">ひま<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(hima-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">ひま<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(hima-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">たいせつ<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">たいせつ</span><br><span style="color:var(--gray);font-size:10px;">important</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">たいせつです <span style="color:var(--lgray);font-size:10px;">(taisetsu-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">たいせつ<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(taisetsu-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">たいせつ<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(taisetsu-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">たいせつ<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(taisetsu-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">たいせつ<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(taisetsu-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">たいせつ<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(taisetsu-de)</span></td>
+        </tr><tr>
+          <td rowspan="6" style="font-weight:700;font-family:monospace;font-size:13px;vertical-align:middle;border-top:2px solid var(--border);">しんせつ<br><span style="font-weight:400;color:var(--lgray);font-size:10px;">しんせつ</span><br><span style="color:var(--gray);font-size:10px;">kind</span></td>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;border-top:2px solid var(--border);">L6</td>
+          <td style="color:var(--gray);border-top:2px solid var(--border);"><ruby>肯定<rt>こうてい</rt></ruby></td>
+          <td style="font-family:monospace;border-top:2px solid var(--border);">しんせつです <span style="color:var(--lgray);font-size:10px;">(shinsetsu-desu)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>否定<rt>ひてい</rt></ruby></td>
+          <td style="font-family:monospace;">しんせつ<span style="color:var(--red);font-weight:700;">じゃありません</span> <span style="color:var(--lgray);font-size:10px;">(shinsetsu-ja arimasen)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L6</td>
+          <td style="color:var(--gray);"><ruby>名詞修飾<rt>めいししゅうしょく</rt></ruby></td>
+          <td style="font-family:monospace;">しんせつ<span style="color:var(--red);font-weight:700;">な</span>＋N <span style="color:var(--lgray);font-size:10px;">(shinsetsu-na + noun)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（＋）</td>
+          <td style="font-family:monospace;">しんせつ<span style="color:var(--red);font-weight:700;">でした</span> <span style="color:var(--lgray);font-size:10px;">(shinsetsu-deshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L11</td>
+          <td style="color:var(--gray);"><ruby>過去<rt>かこ</rt></ruby>（−）</td>
+          <td style="font-family:monospace;">しんせつ<span style="color:var(--red);font-weight:700;">じゃありませんでした</span> <span style="color:var(--lgray);font-size:10px;">(shinsetsu-ja arimasendeshita)</span></td>
+        </tr>
+        <tr>
+          <td style="color:var(--lgray);font-size:10px;text-align:center;">L12</td>
+          <td style="color:var(--gray);">て<ruby>形<rt>けい</rt></ruby></td>
+          <td style="font-family:monospace;">しんせつ<span style="color:var(--red);font-weight:700;">で</span> <span style="color:var(--lgray);font-size:10px;">(shinsetsu-de)</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note">
+      <div class="note-label">📝 Note</div>
+      <ul>
+        <li><span style="color:var(--red);">※na</span> = ends in「い」but is a <strong>na-adjective</strong>. Needs「な」before a noun.
+          <div class="ja">→ 「い」で<ruby>終わる<rt>お</rt></ruby>がナ<ruby>形容詞<rt>けいようし</rt></ruby>。<ruby>名詞<rt>めいし</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>は「な」が<ruby>必要<rt>ひつよう</rt></ruby>。</div>
+        </li>
+        <li>「いい」negative / past → use <strong>よ-</strong> stem: <span style="color:var(--red);">よ</span>くないです・<span style="color:var(--red);">よ</span>かったです
+          <div class="ja">→ 「いい」の<ruby>否定形<rt>ひていけい</rt></ruby>・<ruby>過去形<rt>かこけい</rt></ruby>は「よ」から<ruby>始まる<rt>はじ</rt></ruby>。(NOT いくないです ✖)</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
